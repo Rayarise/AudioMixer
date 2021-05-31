@@ -1,0 +1,40 @@
+﻿<Window x:Class="VeilleTechnoAudioMixer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VeilleTechnoAudioMixer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="DarkGray">
+            <MenuItem Header="File">
+                <MenuItem Header="Open File" Command="{Binding OpenFile}">
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Height="20" Width="75" Content="Play" Command="{Binding Play}" />
+
+            <Label  Grid.Column="1" Grid.Row="0" Content="{Binding fileName}"  VerticalAlignment="Center"></Label>
+            <Label  Grid.Column="1" Grid.Row="3" Content="Volume"  ></Label>
+            <Slider Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom"  Minimum="0" Maximum="1" ValueChanged="Slider_ValueChanged" Value="{Binding sliderValue}"></Slider>
+        </Grid>
+    </DockPanel>
+</Window>
